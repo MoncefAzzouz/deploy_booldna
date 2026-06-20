@@ -89,7 +89,7 @@ sudo git clone -b admin-prod https://github.com/MoncefAzzouz/deploy_booldna.git 
 sudo chown -R $USER:$USER /var/www/blood-donation-admin
 cd /var/www/blood-donation-admin/Blood-donation-admin-prod
 npm ci
-printf "VITE_API_URL=https://api.your-domain.com/api/v1\n" > .env.production
+printf "VITE_API_URL=http://bloodna.com/api/v1\n" > .env.production
 npm run build
 sudo mkdir -p /var/www/blood-donation-admin-dist
 sudo rsync -a --delete dist/ /var/www/blood-donation-admin-dist/
