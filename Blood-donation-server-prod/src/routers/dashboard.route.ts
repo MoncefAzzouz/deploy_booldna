@@ -7,7 +7,7 @@
 
 import { Router } from "express";
 import { authenticateAdmin } from "../middleware/auth.js";
-import { getDashboardStatsController } from "../apis/v1/dashboard.controller.js";
+import { getDashboardStatsController } from "../controllers/dashboard.controller.js";
 
 const router = Router();
 

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx --watch src/app.ts",
+    "prebuild": "prisma generate",
     "build": "tsc",
     "start": " node --experimental-specifier-resolution=node dist/app.js"
   },
@@ -28,7 +29,7 @@
     "morgan": "^1.10.1",
     "nodemailer": "^8.0.1",
     "nodemon": "^3.1.11",
-    "prisma": "^6.19.2",
+    "prisma": "^7.8.0",
     "resend": "^6.6.0",
     "winston": "^3.19.0",
     "zod": "^4.1.13"

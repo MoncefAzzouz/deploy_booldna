@@ -12,7 +12,7 @@ import {
   createBulkQuestionResponsesController,
   getQuestionResponsesByDonationController,
   getQuestionResponseByIdController,
-} from "../apis/v1/question.controller.js";
+} from "../controllers/question.controller.js";
 import { Router } from "express";
 import { authenticateUser, authenticateAdmin } from "../middleware/auth.js";
 

@@ -7,7 +7,7 @@ import {
   deactivateAdminCtsController,
   activateAdminCtsController,
   loginAdminCtsController,
-} from "../apis/v1/adminCts.controller.js";
+} from "../controllers/adminCts.controller.js";
 import { authenticateAdmin } from "../middleware/auth.js";
 import { requireSuperAdmin } from "../middleware/auth.js";
 import { Router } from "express";

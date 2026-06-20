@@ -12,7 +12,7 @@ import {
   deleteBloodAlertController,
   updateBloodAlertController,
   getBloodAlertDonationsController,
-} from "../apis/v1/alert.controller.js";
+} from "../controllers/alert.controller.js";
 
 const router = Router();
 

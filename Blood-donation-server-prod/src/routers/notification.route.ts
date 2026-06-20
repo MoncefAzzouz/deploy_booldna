@@ -4,7 +4,7 @@ import {
   getNotificationsController,
   markNotificationAsReadController,
   deleteNotificationController,
-} from "../apis/v1/notification.controller.js";
+} from "../controllers/notification.controller.js";
 import { authenticateUser } from "../middleware/auth.js";
 
 const router = Router();

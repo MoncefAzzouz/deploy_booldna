@@ -3,7 +3,7 @@ import {
   registerUserController,
   loginUserController,
   changePasswordController,
-} from "../apis/v1/user.controller.js";
+} from "../controllers/user.controller.js";
 import { authenticateUser } from "../middleware/auth.js";
 
 const router = Router();

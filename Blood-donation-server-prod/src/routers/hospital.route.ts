@@ -4,7 +4,7 @@ import {
   getHospitalByIdController,
   updateHospitalController,
   getHospitalsController,
-} from "../apis/v1/hospital.controller.js";
+} from "../controllers/hospital.controller.js";
 import { authenticateAdmin } from "../middleware/auth.js";
 import { requireSuperAdmin } from "../middleware/auth.js";
 import { Router } from "express";

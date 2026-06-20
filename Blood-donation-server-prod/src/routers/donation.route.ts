@@ -6,7 +6,7 @@ import {
   getDoncationByIdController,
   updateDonationByAdminController,
   validateDonationByAdminController,
-} from "../apis/v1/donation.controller.js";
+} from "../controllers/donation.controller.js";
 import { Router } from "express";
 import { authenticateUser, authenticateAdmin } from "../middleware/auth.js";
 

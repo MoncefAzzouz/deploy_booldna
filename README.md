@@ -63,7 +63,6 @@ npm ci
 cp .env.example .env
 nano .env
 npm run build
-npx prisma generate
 npx prisma db push
 pm2 start dist/app.js --name blood-donation-api --node-args="--experimental-specifier-resolution=node"
 pm2 save
@@ -78,7 +77,6 @@ git pull origin server-prod
 cd Blood-donation-server-prod
 npm ci
 npm run build
-npx prisma generate
 npx prisma db push
 pm2 restart blood-donation-api
 ```
