@@ -1,0 +1,250 @@
+{
+  "users": [
+    {
+      "user_id": 1,
+      "full_name": "Aymen Rahmani",
+      "email": "aymen@example.com",
+      "password_hash": "$2b$10$hash1",
+      "phone": "+213555001122",
+      "address": "Algiers, Algeria",
+      "blood_group": "O+",
+      "birth_date": "2003-04-12",
+      "gender": "male",
+      "last_donation_date": "2025-01-20",
+      "is_regular_donor": 1,
+      "email_verified_at": "2024-12-01 10:00:00",
+      "last_login_at": "2025-02-10 14:33:00",
+      "deleted_at": null,
+      "created_at": "2024-11-21 08:00:00",
+      "updated_at": "2025-01-20 09:30:00"
+    },
+    {
+      "user_id": 2,
+      "full_name": "Sara Belhadj",
+      "email": "sara.b@example.com",
+      "password_hash": "$2b$10$hash2",
+      "phone": "+213555993322",
+      "address": "Oran, Algeria",
+      "blood_group": "A+",
+      "birth_date": "2000-09-01",
+      "gender": "female",
+      "last_donation_date": null,
+      "is_regular_donor": 0,
+      "email_verified_at": null,
+      "last_login_at": "2025-01-11 09:15:00",
+      "deleted_at": null,
+      "created_at": "2024-12-18 11:30:00",
+      "updated_at": "2025-01-01 10:00:00"
+    }
+  ],
+
+  "admins": [
+    {
+      "admin_id": 1,
+      "full_name": "Dr. Khaled Benali",
+      "email": "khaled.admin@example.com",
+      "password_hash": "$2b$10$adminhash1",
+      "phone": "+213550220044",
+      "employee_id": "CTS-001",
+      "role": "super_admin",
+      "last_login_at": "2025-02-08 17:30:00",
+      "activated_at": "2024-05-10 10:00:00",
+      "activated_by": null,
+      "deactivated_at": null,
+      "deactivated_by": null,
+      "deleted_at": null,
+      "created_at": "2024-05-10 10:00:00",
+      "updated_at": "2025-02-08 17:30:00"
+    },
+    {
+      "admin_id": 2,
+      "full_name": "Nesrine Cherif",
+      "email": "nesrine.cts@example.com",
+      "password_hash": "$2b$10$adminhash2",
+      "phone": "+213550110033",
+      "employee_id": "CTS-045",
+      "role": "admin_cts",
+      "last_login_at": "2025-02-02 14:00:00",
+      "activated_at": "2024-06-01 08:00:00",
+      "activated_by": 1,
+      "deactivated_at": null,
+      "deactivated_by": null,
+      "deleted_at": null,
+      "created_at": "2024-06-01 08:00:00",
+      "updated_at": "2025-02-02 14:00:00"
+    }
+  ],
+
+  "hospitals": [
+    {
+      "hospital_id": 1,
+      "name": "Algiers Central Hospital",
+      "address": "Rue Didouche Mourad, Algiers",
+      "city": "Algiers",
+      "postal_code": "16000",
+      "phone": "+21321450000",
+      "email": "contact@algiers-hospital.dz",
+      "is_active": 1,
+      "deleted_at": null,
+      "created_at": "2024-01-10 09:00:00"
+    },
+    {
+      "hospital_id": 2,
+      "name": "Oran CTS Clinic",
+      "address": "Centre de Transfusion Sanguine, Oran",
+      "city": "Oran",
+      "postal_code": "31000",
+      "phone": "+21341499222",
+      "email": "info@oran-cts.dz",
+      "is_active": 1,
+      "deleted_at": null,
+      "created_at": "2024-03-15 11:00:00"
+    }
+  ],
+
+  "blood_alerts": [
+    {
+      "alert_id": 1,
+      "hospital_id": 1,
+      "blood_group": "O+",
+      "quantity_units": 3,
+      "urgency_level": "urgent",
+      "status": "active",
+      "created_by": 2,
+      "description": "Critical shortage of O+ units for emergency surgery.",
+      "deleted_at": null,
+      "created_at": "2025-01-15 12:00:00",
+      "updated_at": "2025-01-16 09:00:00"
+    },
+    {
+      "alert_id": 2,
+      "hospital_id": 2,
+      "blood_group": "A+",
+      "quantity_units": 2,
+      "urgency_level": "medium",
+      "status": "recovered",
+      "created_by": 1,
+      "description": "Need A+ blood due to scheduled transfusions.",
+      "deleted_at": null,
+      "created_at": "2025-01-05 09:00:00",
+      "updated_at": "2025-01-20 13:00:00"
+    }
+  ],
+
+  "user_blood_alert": [
+    {
+      "user_id": 1,
+      "alert_id": 1,
+      "notified_at": "2025-01-15 12:05:00",
+      "confirmed": 1,
+      "date_confirmed": "2025-01-15 13:00:00"
+    },
+    {
+      "user_id": 2,
+      "alert_id": 2,
+      "notified_at": "2025-01-05 09:10:00",
+      "confirmed": 0,
+      "date_confirmed": null
+    }
+  ],
+
+  "donations": [
+    {
+      "donation_id": 1,
+      "user_id": 1,
+      "hospital_id": 1,
+      "alert_id": 1,
+      "donation_date": "2025-01-20 10:00:00",
+      "quantity_units": 1,
+      "status": "confirmed",
+      "approved_by": 2,
+      "created_by": 1,
+      "updated_by": 1,
+      "notes": "Donor in good condition.",
+      "created_at": "2025-01-15 13:20:00",
+      "updated_at": "2025-01-20 10:30:00"
+    }
+  ],
+
+  "questionnaires": [
+    {
+      "questionnaire_id": 1,
+      "name": "Pre-Donation Screening",
+      "description": "Basic health questions before donation.",
+      "is_active": 1,
+      "created_at": "2024-12-01 08:00:00"
+    }
+  ],
+
+  "questions": [
+    {
+      "question_id": 1,
+      "questionnaire_id": 1,
+      "question_text": "Have you donated blood in the last 3 months?",
+      "question_type": "yes_no",
+      "question_order": 1,
+      "created_at": "2024-12-01 08:05:00"
+    },
+    {
+      "question_id": 2,
+      "questionnaire_id": 1,
+      "question_text": "Are you currently taking any medication?",
+      "question_type": "yes_no",
+      "question_order": 2,
+      "created_at": "2024-12-01 08:06:00"
+    }
+  ],
+
+  "questionnaire_responses": [
+    {
+      "response_id": 1,
+      "user_id": 1,
+      "question_id": 1,
+      "answer_text": "no",
+      "answered_at": "2025-01-15 13:30:00"
+    }
+  ],
+
+  "appointments": [
+    {
+      "appointment_id": 1,
+      "user_id": 1,
+      "hospital_id": 1,
+      "donation_id": 1,
+      "appointment_start": "2025-01-20 09:30:00",
+      "appointment_end": "2025-01-20 10:30:00",
+      "status": "confirmed",
+      "created_at": "2025-01-15 13:00:00",
+      "updated_at": "2025-01-20 09:40:00"
+    }
+  ],
+
+  "notifications": [
+    {
+      "notification_id": 1,
+      "user_id": 1,
+      "notification_type": "alert",
+      "title": "Urgent O+ Blood Needed",
+      "message": "There is an emergency request for O+ blood at Algiers Central Hospital.",
+      "sent_at": "2025-01-15 12:05:00",
+      "read": 1,
+      "read_at": "2025-01-15 12:10:00",
+      "metadata": { "alert_id": 1 }
+    }
+  ],
+
+  "audit_logs": [
+    {
+      "log_id": 1,
+      "actor_user_id": 1,
+      "actor_admin_id": null,
+      "action": "donation_confirmed",
+      "entity_type": "donation",
+      "entity_id": "1",
+      "payload": { "status": "confirmed" },
+      "ip_address": "102.120.33.11",
+      "user_agent": "Mozilla/5.0",
+      "created_at": "2025-01-20 10:00:00"
+    }
+  ]
+}

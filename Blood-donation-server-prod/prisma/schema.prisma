@@ -1,0 +1,363 @@
+// Prisma Client Generator
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+// =====================================
+// DATASOURCE
+// =====================================
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+// =====================================
+// ENUMS
+// =====================================
+
+enum BloodGroup {
+  A_POS
+  A_NEG
+  B_POS
+  B_NEG
+  AB_POS
+  AB_NEG
+  O_POS
+  O_NEG
+}
+
+enum Gender {
+  male
+  female
+  other
+}
+
+enum AdminRole {
+  super_admin
+  admin_cts
+}
+
+enum UrgencyLevel {
+  low
+  medium
+  urgent
+}
+
+enum AlertStatus {
+  active
+  recovered
+}
+
+enum DonationStatus {
+  planned
+  confirmed
+  cancelled
+}
+
+
+
+enum NotificationType {
+  alert
+  reminder
+  info
+}
+
+
+
+// =====================================
+// USER MODEL
+// =====================================
+
+model User {
+  userId            Int               @id @default(autoincrement()) @map("user_id")
+  fullName          String            @map("full_name")
+  email             String            @unique
+  password          String
+  phoneNumber       String?           @map("phone_number")
+  address           String?
+  bloodGroup        BloodGroup        @map("blood_group")
+  birthDate         DateTime          @map("birth_date")
+  gender            Gender
+  lastDonationDate  DateTime?         @map("last_donation_date")
+  isRegularDonor    Boolean           @default(false) @map("is_regular_donor")
+  emailVerifiedAt   DateTime?         @map("email_verified_at")
+  isVerified         Boolean           @default(false) @map("is_verified")
+  lastLoginAt       DateTime?         @map("last_login_at")
+  createdAt         DateTime          @default(now()) @map("created_at")
+  deletedAt         DateTime?         @map("deleted_at")
+  updatedAt         DateTime          @updatedAt @map("updated_at")
+
+  // Relations
+  userBloodAlerts   UserBloodAlert[]
+  donations         Donation[]        @relation("UserDonations")
+  createdDonations  Donation[]        @relation("CreatedByUser")
+  updatedDonations  Donation[]        @relation("UpdatedByUser")
+  // appointments      Appointment[]
+  notifications     Notification[]
+  auditLogs         AuditLog[]        @relation("AuditUserActor")
+
+  @@map("users")
+}
+
+// =====================================
+// ADMIN MODEL
+// =====================================
+
+model Admin {
+  adminId           Int            @id @default(autoincrement()) @map("admin_id")
+  fullName          String         @map("full_name")
+  email             String         @unique
+  passwordHash      String         @map("password_hash")
+  phone             String?
+  employeeId        String?        @map("employee_id")
+  role              AdminRole
+  isVerified         Boolean        @default(false) @map("is_verified")
+
+  emailVerifiedAt  DateTime?       @map("email_verified_at")
+  lastLoginAt       DateTime?      @map("last_login_at")
+  activatedAt       DateTime?      @map("activated_at")
+  activatedBy       Int?           @map("activated_by")
+  deactivatedAt     DateTime?      @map("deactivated_at")
+  deactivatedBy     Int?           @map("deactivated_by")
+  deletedAt         DateTime?      @map("deleted_at")
+  createdAt         DateTime       @default(now()) @map("created_at")
+  updatedAt         DateTime       @updatedAt @map("updated_at")
+
+  // SELF RELATIONS
+  activatedByAdmin      Admin?   @relation("AdminActivatedBy", fields: [activatedBy], references: [adminId])
+  deactivatedByAdmin    Admin?   @relation("AdminDeactivatedBy", fields: [deactivatedBy], references: [adminId])
+  activatedAdmins        Admin[] @relation("AdminActivatedBy")
+  deactivatedAdmins      Admin[] @relation("AdminDeactivatedBy")
+
+  createdBloodAlerts BloodAlert[] @relation("AlertCreatedByAdmin")
+  approvedDonations  Donation[]   @relation("AdminApproveDonation")
+  auditLogs          AuditLog[]   @relation("AuditAdminActor")
+
+  @@map("admins")
+}
+
+// =====================================
+// HOSPITAL MODEL
+// =====================================
+
+model Hospital {
+  hospitalId Int          @id @default(autoincrement()) @map("hospital_id")
+  name       String
+  address    String?
+  city       String?
+  postalCode String?      @map("postal_code")
+  phone      String?
+  email      String?
+  isActive   Boolean      @default(true) @map("is_active")
+  deletedAt  DateTime?    @map("deleted_at")
+  createdAt  DateTime     @default(now()) @map("created_at")
+
+  bloodAlerts BloodAlert[]
+  // donations    Donation[]
+  // appointments Appointment[]
+
+  @@map("hospitals")
+}
+
+// =====================================
+// BLOOD ALERT MODEL
+// =====================================
+
+model BloodAlert {
+  alertId        Int          @id @default(autoincrement()) @map("alert_id")
+  hospitalId     Int?         @map("hospital_id")
+  bloodGroup     BloodGroup   @map("blood_group")
+  quantityUnits  Int          @default(1) @map("quantity_units")
+  urgencyLevel   UrgencyLevel @default(medium) @map("urgency_level")
+  status         AlertStatus  @default(active)
+  createdBy      Int?         @map("created_by")
+  description    String?
+  deletedAt      DateTime?    @map("deleted_at")
+  createdAt      DateTime     @default(now()) @map("created_at")
+  updatedAt      DateTime     @updatedAt @map("updated_at")
+
+  hospital       Hospital?    @relation(fields: [hospitalId], references: [hospitalId], onDelete: SetNull)
+  createdByAdmin Admin?       @relation("AlertCreatedByAdmin", fields: [createdBy], references: [adminId], onDelete: SetNull)
+
+  donations      Donation[]
+  userBloodAlerts UserBloodAlert[]
+
+  @@map("blood_alerts")
+}
+
+// =====================================
+// USER BLOOD ALERT PIVOT TABLE
+// =====================================
+
+model UserBloodAlert {
+  userId        Int      @map("user_id")
+  alertId       Int      @map("alert_id")
+  notifiedAt    DateTime @default(now()) @map("notified_at")
+  confirmed     Boolean  @default(false)
+  dateConfirmed DateTime? @map("date_confirmed")
+
+  user        User       @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  bloodAlert  BloodAlert @relation(fields: [alertId], references: [alertId], onDelete: Cascade)
+
+  @@id([userId, alertId])
+  @@map("user_blood_alert")
+}
+
+// =====================================
+// DONATIONS
+// =====================================
+
+model Donation {
+  donationId      Int            @id @default(autoincrement()) @map("donation_id")
+  userId          Int            @map("user_id")
+  alertId         Int?           @map("alert_id")
+  donationDate    DateTime       @map("donation_date")
+  quantityUnits   Int            @default(1) @map("quantity_units")
+  status          DonationStatus @default(planned)
+  approvedBy      Int?           @map("approved_by")
+  createdBy       Int?           @map("created_by")
+  updatedBy       Int?           @map("updated_by")
+  questionnaireCompleted Boolean       @default(false) @map("questionnaire_completed")
+  questionnaireId Int?           @map("questionnaire_id")
+  notes           String?
+  createdAt       DateTime       @default(now()) @map("created_at")
+  updatedAt       DateTime       @updatedAt @map("updated_at")
+
+  user            User        @relation("UserDonations", fields: [userId], references: [userId], onDelete: Restrict)
+  alert           BloodAlert? @relation(fields: [alertId], references: [alertId], onDelete: SetNull)
+
+  approvedByAdmin Admin?      @relation("AdminApproveDonation", fields: [approvedBy], references: [adminId], onDelete: SetNull)
+
+  createdByUser   User?       @relation("CreatedByUser", fields: [createdBy], references: [userId], onDelete: SetNull)
+  updatedByUser   User?       @relation("UpdatedByUser", fields: [updatedBy], references: [userId], onDelete: SetNull)
+
+  questionnaire   Questionnaire? @relation(fields: [questionnaireId], references: [questionnaireId])
+  questionResponses QuestionResponse[]
+
+  @@map("donations")
+}
+
+// =====================================
+// APPOINTMENTS
+// =====================================
+
+// model Appointment {
+//   appointmentId   Int               @id @default(autoincrement()) @map("appointment_id")
+//   userId          Int               @map("user_id")
+//   hospitalId      Int?              @map("hospital_id")
+//   donationId      Int?              @map("donation_id")
+//   appointmentStart DateTime         @map("appointment_start")
+//   appointmentEnd   DateTime?        @map("appointment_end")
+//   status           AppointmentStatus @default(planned)
+//   createdAt        DateTime         @default(now()) @map("created_at")
+//   updatedAt        DateTime         @updatedAt @map("updated_at")
+
+//   user        User       @relation(fields: [userId], references: [userId], onDelete: Cascade)
+//   hospital    Hospital?  @relation(fields: [hospitalId], references: [hospitalId], onDelete: SetNull)
+//   donation    Donation?  @relation(fields: [donationId], references: [donationId], onDelete: SetNull)
+
+//   @@map("appointments")
+// }
+
+// =====================================
+// QUESTIONNAIRES
+// =====================================
+
+model Questionnaire {
+  questionnaireId Int      @id @default(autoincrement()) @map("questionnaire_id")
+  name            String
+  description     String?
+  isActive        Boolean  @default(true) @map("is_active")
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  questions       Question[]
+  donations       Donation[]  
+  @@map("questionnaires")
+}
+
+// =====================================
+// QUESTIONS
+// =====================================
+
+model Question {
+  questionId      Int      @id @default(autoincrement()) @map("question_id")
+  questionnaireId Int      @map("questionnaire_id")
+  question        String
+  questionType    String   @default("yes_no") @map("question_type") // yes_no, text, multiple_choice
+  options         String?  // JSON stringified array for multiple choice
+  isRequired      Boolean  @default(true) @map("is_required")
+  order           Int      @default(0)
+  isActive        Boolean  @default(true) @map("is_active")
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [questionnaireId], onDelete: Cascade)
+  responses       QuestionResponse[]
+
+  @@map("questions")
+}
+
+// =====================================
+// QUESTION RESPONSES
+// =====================================
+
+model QuestionResponse {
+  responseId    Int      @id @default(autoincrement()) @map("response_id")
+  donationId    Int      @map("donation_id")
+  questionId    Int      @map("question_id")
+  answer        String   // Store answer as string (yes, no, or text)
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  donation      Donation @relation(fields: [donationId], references: [donationId], onDelete: Cascade)
+  question      Question @relation(fields: [questionId], references: [questionId], onDelete: Cascade)
+
+  @@unique([donationId, questionId])
+  @@map("question_responses")
+}
+
+// =====================================
+// NOTIFICATIONS
+// =====================================
+
+model Notification {
+  notificationId   Int             @id @default(autoincrement()) @map("notification_id")
+  userId           Int             @map("user_id")
+  notificationType NotificationType @map("notification_type")
+  title            String?
+  message          String?
+  sentAt           DateTime        @default(now()) @map("sent_at")
+  read             Boolean         @default(false)
+  readAt           DateTime?       @map("read_at")
+  // metadata         Json?
+
+  user             User @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  @@map("notifications")
+}
+
+// =====================================
+// AUDIT LOGS
+// =====================================
+
+model AuditLog {
+  logId        Int      @id @default(autoincrement()) @map("log_id")
+  actorUserId  Int?     @map("actor_user_id")
+  actorAdminId Int?     @map("actor_admin_id")
+  action       String
+  entityType   String?
+  entityId     String?
+  payload      Json?
+  ipAddress    String?  @map("ip_address")
+  userAgent    String?  @map("user_agent")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  actorUser    User?    @relation("AuditUserActor", fields: [actorUserId], references: [userId], onDelete: SetNull)
+  actorAdmin   Admin?   @relation("AuditAdminActor", fields: [actorAdminId], references: [adminId], onDelete: SetNull)
+
+  @@map("audit_logs")
+}

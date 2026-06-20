@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Brand — primary actions, logo, accents */
+  --color-brand-50: #fef2f2;
+  --color-brand-100: #fee2e2;
+  --color-brand-200: #fecaca;
+  --color-brand-500: #ef4444;
+  --color-brand-600: #dc2626;
+  --color-brand-700: #b91c1c;
+  --color-brand-900: #7f1d1d;
+
+  /* Danger / urgent — kept identical to brand red for now, but expressed as a
+     separate token so they can diverge later (e.g. brand = burgundy, danger = red). */
+  --color-danger-50: #fef2f2;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+
+  /* Semantic status */
+  --color-success-50: #ecfdf5;
+  --color-success-500: #10b981;
+  --color-success-600: #059669;
+  --color-warning-50: #fff7ed;
+  --color-warning-500: #f97316;
+  --color-warning-600: #ea580c;
+  --color-info-50: #eff6ff;
+  --color-info-500: #3b82f6;
+  --color-info-600: #2563eb;
+
+  /* Radii — only three values, named by intent */
+  --radius-field: 0.75rem;       /* inputs, small buttons */
+  --radius-card: 1.5rem;         /* standard cards */
+  --radius-surface: 2rem;        /* page-level surfaces, modals */
+
+  /* Shadows — only three elevations */
+  --shadow-card: 0 1px 3px 0 rgb(15 23 42 / 0.04), 0 1px 2px -1px rgb(15 23 42 / 0.04);
+  --shadow-elevated: 0 10px 25px -5px rgb(15 23 42 / 0.08), 0 8px 10px -6px rgb(15 23 42 / 0.04);
+  --shadow-brand: 0 10px 25px -5px rgb(220 38 38 / 0.25);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-brand-500) transparent;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-zoomIn {
+  animation: zoomIn 0.22s ease-out;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+html,
+body {
+  display: flex;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  /* slate-50 */
+  color: #020617;
+  /* slate-950 */
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body {
+  background-color: #020617;
+  /* slate-950 */
+  color: #f8fafc;
+  /* slate-50 */
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  flex-shrink: 0;
+  overflow-y: visible;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

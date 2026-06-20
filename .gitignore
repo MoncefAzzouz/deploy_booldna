@@ -1,0 +1,14 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+build/
+logs/
+*.log
+.vscode/
+.idea/
+
+# Mobile app is intentionally not deployed/pushed from this repo setup.
+blood_donation/

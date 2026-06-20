@@ -1,0 +1,45 @@
+{
+  "name": "donation_blood",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx --watch src/app.ts",
+    "build": "tsc",
+    "start": " node --experimental-specifier-resolution=node dist/app.js"
+  },
+  "author": "blood",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@libsql/client": "^0.15.15",
+    "@prisma/adapter-better-sqlite3": "^7.1.0",
+    "@prisma/adapter-mariadb": "^7.2.0",
+    "@prisma/client": "^6.19.3",
+    "@types/bcrypt": "^6.0.0",
+    "@types/nodemailer": "^7.0.11",
+    "bcrypt": "^6.0.0",
+    "better-sqlite3": "^12.5.0",
+    "body-parser": "^2.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.10.1",
+    "nodemailer": "^8.0.1",
+    "nodemon": "^3.1.11",
+    "prisma": "^6.19.2",
+    "resend": "^6.6.0",
+    "winston": "^3.19.0",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.10.1",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
