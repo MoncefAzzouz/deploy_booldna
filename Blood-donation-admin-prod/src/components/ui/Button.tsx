@@ -1,4 +1,7 @@
+import type { ReactNode } from "react";
+
 type Props = {
+  children?: ReactNode;
   title?: string;
   type?: "submit" | "reset" | "button";
   className?: string;
@@ -6,7 +9,14 @@ type Props = {
   variant?: "primary" | "secondary" | "outline";
 };
 
-export default function Button({ type = 'button', className, onClick, title, variant = "primary" }: Props) {
+export default function Button({
+  children,
+  type = "button",
+  className,
+  onClick,
+  title,
+  variant = "primary",
+}: Props) {
   const baseStyles = "relative px-6 py-3 rounded-xl font-bold transition-all duration-300 transform active:scale-95 shadow-lg flex items-center justify-center gap-2 overflow-hidden group";
 
   const variants = {
@@ -22,7 +32,7 @@ export default function Button({ type = 'button', className, onClick, title, var
       onClick={onClick}
     >
       <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer" />
-      <span className="relative z-10">{title}</span>
+      <span className="relative z-10">{children ?? title}</span>
     </button>
   );
 }
