@@ -4,6 +4,8 @@ import {
   getDonationsController,
   getDonationsByAlertIdController,
   getDoncationByIdController,
+  getMyDonationByIdController,
+  getMyDonationsController,
   updateDonationByAdminController,
   validateDonationByAdminController,
 } from "../controllers/donation.controller.js";
@@ -13,6 +15,8 @@ import { authenticateUser, authenticateAdmin } from "../middleware/auth.js";
 const router = Router();
 
 router.post("/donations", authenticateUser, createDonationController);
+router.get("/users/me/donations", authenticateUser, getMyDonationsController);
+router.get("/users/me/donations/:id", authenticateUser, getMyDonationByIdController);
 
 // Changed from authenticateUser to authenticateAdmin — the admin dashboard
 // needs to list all donations, but these routes originally required a user token.

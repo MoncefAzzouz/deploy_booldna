@@ -5,6 +5,8 @@ import {
   getDonationById,
   getDonations,
   getDonationsByAlertId,
+  getUserDonationById,
+  getUserDonations,
   deleteDonation,
 } from "../services/donation.service.js";
 import { Request } from "express";
@@ -15,7 +17,12 @@ import { asyncHandler } from "../utils/asynchandler.js";
 
 export const createDonationController = asyncHandler(
   async (req: Request) => {
-    return await createDonation(req.body);
+    const userId = req.user?.userId;
+    if (!userId) {
+      throw new AppError("Unauthorized: User ID missing", 401);
+    }
+
+    return await createDonation({ ...req.body, userId });
   },
   {
     createdMessage: "Donation created successfully",
@@ -50,6 +57,34 @@ export const getDoncationByIdController = asyncHandler(async (req: Request) => {
     throw new AppError("Invalid donation ID", 400);
   }
   return await getDonationById(donationId);
+});
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+export const getMyDonationsController = asyncHandler(async (req: Request) => {
+  const userId = req.user?.userId;
+  if (!userId) {
+    throw new AppError("Unauthorized: User ID missing", 401);
+  }
+
+  return await getUserDonations(userId);
+});
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+export const getMyDonationByIdController = asyncHandler(async (req: Request) => {
+  const userId = req.user?.userId;
+  const donationId = parseInt(req.params.id);
+
+  if (!userId) {
+    throw new AppError("Unauthorized: User ID missing", 401);
+  }
+
+  if (!donationId || isNaN(donationId)) {
+    throw new AppError("Invalid donation ID", 400);
+  }
+
+  return await getUserDonationById(donationId, userId);
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////

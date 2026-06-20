@@ -268,6 +268,58 @@ export async function getDonations() {
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
+export async function getUserDonations(userId: number) {
+  try {
+    return await prisma.donation.findMany({
+      where: { userId },
+      include: {
+        alert: {
+          include: {
+            hospital: true,
+          },
+        },
+        approvedByAdmin: true,
+      },
+      orderBy: {
+        donationDate: "desc",
+      },
+    });
+  } catch (error) {
+    throw new AppError(`Failed to fetch user donations: ${error}`, 500);
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+export async function getUserDonationById(donationId: number, userId: number) {
+  try {
+    const donation = await prisma.donation.findFirst({
+      where: { donationId, userId },
+      include: {
+        alert: {
+          include: {
+            hospital: true,
+          },
+        },
+        approvedByAdmin: true,
+      },
+    });
+
+    if (!donation) {
+      throw new AppError("Donation not found", 404);
+    }
+
+    return donation;
+  } catch (error) {
+    if (error instanceof AppError) {
+      throw error;
+    }
+    throw new AppError(`Failed to fetch user donation: ${error}`, 500);
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
 export async function getDonationById(donationId: number) {
   try {
     const donation = await prisma.donation.findUnique({

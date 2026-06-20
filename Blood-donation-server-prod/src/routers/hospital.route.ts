@@ -4,12 +4,17 @@ import {
   getHospitalByIdController,
   updateHospitalController,
   getHospitalsController,
+  getPublicHospitalByIdController,
+  getPublicHospitalsController,
 } from "../controllers/hospital.controller.js";
-import { authenticateAdmin } from "../middleware/auth.js";
+import { authenticateAdmin, authenticateUser } from "../middleware/auth.js";
 import { requireSuperAdmin } from "../middleware/auth.js";
 import { Router } from "express";
 
 const router = Router();
+
+router.get("/hospitals/public", authenticateUser, getPublicHospitalsController);
+router.get("/hospitals/public/:id", authenticateUser, getPublicHospitalByIdController);
 
 router.get("/hospitals", authenticateAdmin, getHospitalsController);
 

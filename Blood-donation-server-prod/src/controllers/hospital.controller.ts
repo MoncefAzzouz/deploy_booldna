@@ -5,6 +5,8 @@ import {
   updateHospital,
   getHospitals,
   getHospitalById,
+  getPublicHospitalById,
+  getPublicHospitals,
   deleteHospital,
 } from "../services/hospital.service.js";
 import { asyncHandler } from "../utils/asynchandler.js";
@@ -34,6 +36,34 @@ export const updateHospitalController = asyncHandler(
   },
   {
     successMessage: "Hospital updated successfully",
+  }
+);
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+export const getPublicHospitalByIdController = asyncHandler(
+  async (req: Request) => {
+    const hospitalId = parseInt(req.params.id);
+
+    if (!hospitalId || isNaN(hospitalId)) {
+      throw new AppError("Invalid hospital ID", 400);
+    }
+
+    return await getPublicHospitalById(hospitalId);
+  },
+  {
+    successMessage: "Hospital retrieved successfully",
+  }
+);
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+export const getPublicHospitalsController = asyncHandler(
+  async () => {
+    return await getPublicHospitals();
+  },
+  {
+    successMessage: "Hospitals retrieved successfully",
   }
 );
 

@@ -3,6 +3,8 @@ import {
   updateBloodAlert,
   getBloodAlertById,
   getBloodAlerts,
+  getPublicBloodAlertById,
+  getPublicBloodAlerts,
   deleteBloodAlert,
   getBloodAlertDonations,
 } from "../services/alert.service.js";
@@ -32,6 +34,24 @@ export const createBloodAlertController = asyncHandler(
 export const getBloodAlertsController = asyncHandler(async (req: Request) => {
   return await getBloodAlerts();
 });
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+export const getPublicBloodAlertsController = asyncHandler(async () => {
+  return await getPublicBloodAlerts();
+});
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+export const getPublicBloodAlertByIdController = asyncHandler(
+  async (req: Request) => {
+    const alertId = parseInt(req.params.id);
+    if (!alertId || isNaN(alertId)) {
+      throw new AppError("Invalid blood alert ID", 400);
+    }
+    return await getPublicBloodAlertById(alertId);
+  },
+);
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 

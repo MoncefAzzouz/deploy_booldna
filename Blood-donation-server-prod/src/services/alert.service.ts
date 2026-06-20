@@ -166,6 +166,55 @@ export async function getBloodAlerts() {
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
+export async function getPublicBloodAlerts() {
+  try {
+    return await prisma.bloodAlert.findMany({
+      where: {
+        deletedAt: null,
+        status: "active",
+      },
+      include: {
+        hospital: true,
+      },
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
+  } catch (error) {
+    throw new AppError(`Failed to fetch public blood alerts: ${error}`, 500);
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+export async function getPublicBloodAlertById(alertId: number) {
+  try {
+    const bloodAlert = await prisma.bloodAlert.findFirst({
+      where: {
+        alertId,
+        deletedAt: null,
+        status: "active",
+      },
+      include: {
+        hospital: true,
+      },
+    });
+
+    if (!bloodAlert) {
+      throw new AppError("Blood alert not found", 404);
+    }
+
+    return bloodAlert;
+  } catch (error) {
+    if (error instanceof AppError) {
+      throw error;
+    }
+    throw new AppError(`Failed to fetch public blood alert: ${error}`, 500);
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
 export async function getBloodAlertById(alertId: number) {
   try {
     const bloodAlert = await prisma.bloodAlert.findUnique({

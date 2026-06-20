@@ -68,6 +68,49 @@ export async function getHospitals() {
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
+export async function getPublicHospitals() {
+  try {
+    return await prisma.hospital.findMany({
+      where: {
+        isActive: true,
+        deletedAt: null,
+      },
+      orderBy: {
+        name: "asc",
+      },
+    });
+  } catch (error) {
+    throw new AppError(`Failed to fetch public hospitals: ${error}`, 500);
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+export async function getPublicHospitalById(hospitalId: number) {
+  try {
+    const hospital = await prisma.hospital.findFirst({
+      where: {
+        hospitalId,
+        isActive: true,
+        deletedAt: null,
+      },
+    });
+
+    if (!hospital) {
+      throw new AppError("Hospital not found", 404);
+    }
+
+    return hospital;
+  } catch (error) {
+    if (error instanceof AppError) {
+      throw error;
+    }
+    throw new AppError(`Failed to fetch public hospital: ${error}`, 500);
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
 export async function getHospitalById(hospitalId: number) {
   try {
     const hospital = await prisma.hospital.findUnique({

@@ -12,6 +12,8 @@ import {
   deleteBloodAlertController,
   updateBloodAlertController,
   getBloodAlertDonationsController,
+  getPublicBloodAlertByIdController,
+  getPublicBloodAlertsController,
 } from "../controllers/alert.controller.js";
 
 const router = Router();
@@ -21,6 +23,9 @@ router.post(
   authenticateAdmin,
   createBloodAlertController,
 );
+
+router.get("/alerts/public", authenticateUser, getPublicBloodAlertsController);
+router.get("/alerts/public/:id", authenticateUser, getPublicBloodAlertByIdController);
 
 // Changed from authenticateUser to authenticateAdmin — the admin dashboard
 // fetches alerts with an admin token, but these routes originally used authenticateUser
