@@ -10,5 +10,3 @@ logs/
 .vscode/
 .idea/
 
-# Mobile app is intentionally not deployed/pushed from this repo setup.
-blood_donation/

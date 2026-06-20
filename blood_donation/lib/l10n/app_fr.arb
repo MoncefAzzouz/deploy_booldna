@@ -1,0 +1,206 @@
+{
+  "appTitle": "App de Don de Sang",
+  "bloodDonation": "Don de Sang",
+  "cases": "Cas",
+  "bloodBanks": "Banques de Sang",
+  "profile": "Profil",
+  "settings": "Paramètres",
+  "language": "Langue",
+  "logout": "Déconnexion",
+  "edit": "Modifier",
+  "noData": "Aucune donnée",
+  "viewAll": "Voir tout",
+  "donations": "Dons",
+  "cancel": "Annuler",
+  "confirmLogout": "Êtes-vous sûr de vouloir vous déconnecter ?",
+  "units": "Unité",
+  "fullName": "Nom complet",
+  "selectLanguage": "Choisir la langue",
+  "arabic": "Arabe",
+  "english": "Anglais",
+  "french": "Français",
+  "location": "Emplacement",
+  "home": "Accueil",
+  "welcomeName": "Bonjour, {name}",
+  "dontForgetAppointment": "N'oubliez pas votre rendez-vous !",
+  "atTime": "à {time}",
+  "noAppointment": "Aucun rendez-vous",
+  "timeToDonate": "Il est temps de donner !",
+  "nextDonationSoon": "Prochain don bientôt",
+  "eligibleToDonate": "Vous êtes éligible pour donner du sang",
+  "thanksLastDonation": "Merci pour votre dernier don ! Vous serez bientôt à nouveau éligible pour donner.",
+  "whereToDonate": "Où donner ?",
+  "all": "Tout",
+  "myBloodType": "Mon Groupe ({bloodType})",
+  "other": "Autre",
+  "noRequests": "Aucune demande",
+  "hospital": "Hôpital",
+  "caseDetails": "Détails du cas",
+  "caseDetailsFor": "Détails du cas pour {name}",
+  "close": "Fermer",
+  "togetherSaveLives": "Ensemble nous sauvons des vies",
+  "welcomeBack": "Bienvenue",
+  "loginToContinue": "Connectez-vous pour continuer",
+  "email": "E-mail",
+  "enterEmail": "Entrez votre e-mail",
+  "emailRequired": "Veuillez entrer votre e-mail",
+  "invalidEmail": "Veuillez entrer un e-mail valide",
+  "password": "Mot de passe",
+  "enterPassword": "Entrez votre mot de passe",
+  "passwordRequired": "Veuillez entrer votre mot de passe",
+  "passwordTooShort": "Le mot de passe doit comporter au moins {min} caractères",
+  "@passwordTooShort": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "forgotPassword": "Mot de passe oublié ?",
+  "login": "Se connecter",
+  "or": "Ou",
+  "loginWithGoogle": "Se connecter avec Google",
+  "dontHaveAccount": "Vous n'avez pas de compte ? ",
+  "registerNow": "Inscrivez-vous maintenant",
+  "errorOccurred": "Une erreur s'est produite : {error}",
+  "@errorOccurred": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewAccount": "Créer un nouveau compte",
+  "joinUsSaveLives": "Rejoignez-nous et aidez à sauver des vies",
+  "enterFullName": "Entrez votre nom complet",
+  "nameRequired": "Veuillez entrer votre nom",
+  "nameTooShort": "Le nom doit comporter au moins {min} caractères",
+  "@nameTooShort": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "phoneNumber": "Numéro de téléphone",
+  "enterPhoneNumber": "Entrez votre numéro de téléphone",
+  "phoneRequired": "Veuillez entrer votre numéro de téléphone",
+  "invalidPhone": "Numéro de téléphone invalide",
+  "address": "Adresse",
+  "addressRequired": "Veuillez entrer votre adresse",
+  "enterAddress": "Entrez votre adresse",
+  "addressTooShort": "L'adresse doit comporter au moins {min} caractères",
+  "@addressTooShort": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "birthDate": "Date de naissance",
+  "pickBirthDate": "Choisissez votre date de naissance",
+  "birthDateRequired": "Veuillez choisir votre date de naissance",
+  "tooYoung": "Vous devez avoir au moins {age} ans",
+  "@tooYoung": {
+    "placeholders": {
+      "age": {
+        "type": "int"
+      }
+    }
+  },
+  "gender": "Genre",
+  "selectGender": "Sélectionnez le genre",
+  "male": "Homme",
+  "female": "Femme",
+  "genderOther": "Autre",
+  "bloodGroup": "Groupe sanguin",
+  "selectBloodGroup": "Sélectionnez votre groupe sanguin",
+  "bloodGroupRequired": "Veuillez sélectionner votre groupe sanguin",
+  "confirmPassword": "Confirmer le mot de passe",
+  "reEnterPassword": "Ré-entrez le mot de passe",
+  "confirmPasswordRequired": "Veuillez confirmer le mot de passe",
+  "passwordsDoNotMatch": "Les mots de passe ne correspondent pas",
+  "agreeToTerms": "J'accepte ",
+  "termsAndConditions": "les conditions générales",
+  "privacyPolicy": "la politique de confidentialité",
+  "mustAgreeTerms": "Vous devez accepter les conditions",
+  "and": " et ",
+  "notAvailable": "Non disponible",
+  "bloodUnitsNeeded": "Unités de sang nécessaires",
+  "getDirections": "Obtenir l'itinéraire",
+  "openingMapFor": "Ouverture de la carte pour {name}",
+  "@openingMapFor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "bookAppointment": "Réserver un rendez-vous pour le don",
+  "selectDateAndTime": "Veuillez sélectionner la date et l'heure",
+  "pleaseLoginFirst": "Veuillez vous connecter d'abord",
+  "appointmentBooked": "Rendez-vous réservé avec succès !",
+  "unitsRequired": "{quantity} unités requises",
+  "@unitsRequired": {
+    "placeholders": {
+      "quantity": {
+        "type": "int"
+      }
+    }
+  },
+  "selectDate": "Choisir la date",
+  "selectTime": "Choisir l'heure",
+  "notesOptional": "Notes (Optionnel)",
+  "addNotesHint": "Ajouter des notes supplémentaires...",
+  "confirmAppointment": "Confirmer le rendez-vous",
+  "done": "Terminé",
+  "willBeAbleToDonate": "Vous pourrez faire un don",
+  "inDays": "dans {days} jours",
+  "@inDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "donatedOn": "Donné le",
+  "dataUpdatedSuccessfully": "Données mises à jour avec succès",
+  "updateError": "Une erreur s'est produite lors de la mise à jour",
+  "editProfile": "Modifier le profil",
+  "saveChanges": "Enregistrer les modifications",
+  "share": "Partager",
+  "donateNow": "Donner maintenant",
+  "urgent": "Urgent",
+  "medium": "Moyen",
+  "low": "Faible",
+  "urgentCase": "Cas urgent",
+  "shareMessage": "Don de sang pour le cas : {hospital}\nGroupe sanguin : {bloodType}\nHôpital : {hospital}\nLien du cas : blooddonation://request?id={id}",
+  "minutesAgo": "Il y a {count} minutes",
+  "hoursAgo": "Il y a {count} heures",
+  "yesterday": "Hier",
+  "daysAgo": "Il y a {count} jours",
+  "register": "S'inscrire",
+  "alreadyHaveAccount": "Vous avez déjà un compte ? ",
+  "resetPassword": "Réinitialiser le mot de passe",
+  "forgotPasswordTitle": "Mot de passe oublié ?",
+  "forgotPasswordDesc": "Entrez votre e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
+  "sendLink": "Envoyer le lien",
+  "resetInstructionsSent": "Instructions de réinitialisation envoyées à votre e-mail",
+  "checkYourEmail": "Vérifiez votre e-mail",
+  "verificationEmailSent": "Nous avons envoyé un lien de vérification à {email}. Veuillez cliquer sur le lien pour vérifier votre compte.",
+  "@verificationEmailSent": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "verifyBeforeLogin": "Vous devez vérifier votre e-mail avant de vous connecter.",
+  "goToLogin": "Aller à la connexion",
+  "checkSpamFolder": "Si vous ne voyez pas l'e-mail, vérifiez votre dossier spam.",
+  "emailNotVerified": "Veuillez vérifier votre e-mail avant de vous connecter. Vérifiez votre boîte de réception.",
+  "notifications": "Notifications",
+  "noNotifications": "Aucune notification",
+  "markAsRead": "Marquer comme lu",
+  "deleteNotification": "Supprimer"
+}

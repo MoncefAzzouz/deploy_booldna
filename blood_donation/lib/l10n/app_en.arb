@@ -1,0 +1,206 @@
+{
+  "appTitle": "Blood Donation App",
+  "bloodDonation": "Blood Donation",
+  "cases": "Cases",
+  "bloodBanks": "Blood Banks",
+  "profile": "Profile",
+  "settings": "Settings",
+  "language": "Language",
+  "logout": "Logout",
+  "edit": "Edit",
+  "noData": "No Data",
+  "viewAll": "View All",
+  "donations": "Donations",
+  "cancel": "Cancel",
+  "confirmLogout": "Are you sure you want to log out?",
+  "units": "Unit",
+  "fullName": "Full Name",
+  "selectLanguage": "Select Language",
+  "arabic": "Arabic",
+  "english": "English",
+  "french": "French",
+  "location": "Location",
+  "home": "Home",
+  "welcomeName": "Hello, {name}",
+  "dontForgetAppointment": "Don't forget your appointment!",
+  "atTime": "at {time}",
+  "noAppointment": "No appointment",
+  "timeToDonate": "Time to donate!",
+  "nextDonationSoon": "Next donation soon",
+  "eligibleToDonate": "You are eligible to donate blood",
+  "thanksLastDonation": "Thanks for your last donation! You will be eligible to donate again soon.",
+  "whereToDonate": "Where to donate?",
+  "all": "All",
+  "myBloodType": "My Type ({bloodType})",
+  "other": "Other",
+  "noRequests": "No requests",
+  "hospital": "Hospital",
+  "caseDetails": "Case Details",
+  "caseDetailsFor": "Case details for {name}",
+  "close": "Close",
+  "togetherSaveLives": "Together we save lives",
+  "welcomeBack": "Welcome back",
+  "loginToContinue": "Login to continue",
+  "email": "Email",
+  "enterEmail": "Enter your email",
+  "emailRequired": "Please enter email",
+  "invalidEmail": "Please enter a valid email",
+  "password": "Password",
+  "enterPassword": "Enter your password",
+  "passwordRequired": "Please enter password",
+  "passwordTooShort": "Password must be at least {min} characters",
+  "@passwordTooShort": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "forgotPassword": "Forgot password?",
+  "login": "Login",
+  "or": "Or",
+  "loginWithGoogle": "Login with Google",
+  "dontHaveAccount": "Don't have an account? ",
+  "registerNow": "Register now",
+  "errorOccurred": "An error occurred: {error}",
+  "@errorOccurred": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewAccount": "Create new account",
+  "joinUsSaveLives": "Join us and help save lives",
+  "enterFullName": "Enter your full name",
+  "nameRequired": "Please enter name",
+  "nameTooShort": "Name must be at least {min} characters",
+  "@nameTooShort": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "phoneNumber": "Phone number",
+  "enterPhoneNumber": "Enter your phone number",
+  "phoneRequired": "Please enter phone number",
+  "invalidPhone": "Invalid phone number",
+  "address": "Address",
+  "addressRequired": "Please enter address",
+  "enterAddress": "Enter your address",
+  "addressTooShort": "Address must be at least {min} characters",
+  "@addressTooShort": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "birthDate": "Birth date",
+  "pickBirthDate": "Pick your birth date",
+  "birthDateRequired": "Please pick birth date",
+  "tooYoung": "You must be at least {age} years old",
+  "@tooYoung": {
+    "placeholders": {
+      "age": {
+        "type": "int"
+      }
+    }
+  },
+  "gender": "Gender",
+  "selectGender": "Select gender",
+  "male": "Male",
+  "female": "Female",
+  "genderOther": "Other",
+  "bloodGroup": "Blood group",
+  "selectBloodGroup": "Select blood group",
+  "bloodGroupRequired": "Please select blood group",
+  "confirmPassword": "Confirm password",
+  "reEnterPassword": "Re-enter password",
+  "confirmPasswordRequired": "Please confirm password",
+  "passwordsDoNotMatch": "Passwords do not match",
+  "agreeToTerms": "I agree to ",
+  "termsAndConditions": "Terms and Conditions",
+  "privacyPolicy": "Privacy Policy",
+  "mustAgreeTerms": "You must agree to terms",
+  "and": " and ",
+  "notAvailable": "Not available",
+  "bloodUnitsNeeded": "Blood units needed",
+  "getDirections": "Get directions",
+  "openingMapFor": "Opening map for {name}",
+  "@openingMapFor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "bookAppointment": "Book donation appointment",
+  "selectDateAndTime": "Please select date and time",
+  "pleaseLoginFirst": "Please login first",
+  "appointmentBooked": "Appointment booked successfully!",
+  "unitsRequired": "{quantity} units required",
+  "@unitsRequired": {
+    "placeholders": {
+      "quantity": {
+        "type": "int"
+      }
+    }
+  },
+  "selectDate": "Select date",
+  "selectTime": "Select time",
+  "notesOptional": "Notes (Optional)",
+  "addNotesHint": "Add any additional notes...",
+  "confirmAppointment": "Confirm Appointment",
+  "done": "Done",
+  "willBeAbleToDonate": "You will be able to donate",
+  "inDays": "in {days} Days",
+  "@inDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "donatedOn": "Donated on",
+  "dataUpdatedSuccessfully": "Data updated successfully",
+  "updateError": "An error occurred during update",
+  "editProfile": "Edit Profile",
+  "saveChanges": "Save Changes",
+  "share": "Share",
+  "donateNow": "Donate Now",
+  "urgent": "Urgent",
+  "medium": "Medium",
+  "low": "Low",
+  "urgentCase": "Urgent Case",
+  "shareMessage": "Donate blood for the case: {hospital}\nBlood Group: {bloodType}\nHospital: {hospital}\nCase link: blooddonation://request?id={id}",
+  "minutesAgo": "{count} minutes ago",
+  "hoursAgo": "{count} hours ago",
+  "yesterday": "Yesterday",
+  "daysAgo": "{count} days ago",
+  "register": "Register",
+  "alreadyHaveAccount": "Already have an account? ",
+  "resetPassword": "Reset Password",
+  "forgotPasswordTitle": "Forgot your password?",
+  "forgotPasswordDesc": "Enter your email and we'll send you a link to reset your password.",
+  "sendLink": "Send Link",
+  "resetInstructionsSent": "Reset instructions sent to your email",
+  "checkYourEmail": "Check your email",
+  "verificationEmailSent": "We've sent a verification link to {email}. Please click the link to verify your account.",
+  "@verificationEmailSent": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "verifyBeforeLogin": "You need to verify your email before you can log in.",
+  "goToLogin": "Go to Login",
+  "checkSpamFolder": "If you don't see the email, check your spam folder.",
+  "emailNotVerified": "Please verify your email before logging in. Check your inbox.",
+  "notifications": "Notifications",
+  "noNotifications": "No notifications",
+  "markAsRead": "Mark as read",
+  "deleteNotification": "Delete"
+}

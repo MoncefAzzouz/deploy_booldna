@@ -1,0 +1,234 @@
+{
+  "appTitle": "تطبيق التبرع بالدم",
+  "bloodDonation": "التبرع بالدم",
+  "cases": "الحالات",
+  "bloodBanks": "بنوك الدم",
+  "profile": "الملف الشخصي",
+  "settings": "الإعدادات",
+  "language": "اللغة",
+  "logout": "تسجيل الخروج",
+  "edit": "تعديل",
+  "noData": "لا توجد بيانات",
+  "viewAll": "عرض الكل",
+  "donations": "التبرعات",
+  "cancel": "إلغاء",
+  "confirmLogout": "هل أنت متأكد من تسجيل الخروج من التطبيق؟",
+  "units": "وحدة",
+  "fullName": "الاسم الكامل",
+  "selectLanguage": "اختر اللغة",
+  "arabic": "العربية",
+  "english": "الإنجليزية",
+  "french": "الفرنسية",
+  "location": "الموقع",
+  "home": "الرئيسية",
+  "welcomeName": "مرحبا، {name}",
+  "@welcomeName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "dontForgetAppointment": "لا تنسَ موعدك!",
+  "atTime": "على الساعة {time}",
+  "@atTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "noAppointment": "لا يوجد موعد",
+  "timeToDonate": "حان وقت التبرع!",
+  "nextDonationSoon": "تبرعك التالي قريباً",
+  "eligibleToDonate": "أنت مؤهل للتبرع بالدم",
+  "thanksLastDonation": "شكراً لتبرعك الأخير! ستكون مؤهلاً للتبرع مرة أخرى قريباً.",
+  "whereToDonate": "أين تتبرع؟",
+  "all": "الكل",
+  "myBloodType": "فصيلتي ({bloodType})",
+  "@myBloodType": {
+    "placeholders": {
+      "bloodType": {
+        "type": "String"
+      }
+    }
+  },
+  "other": "أخرى",
+  "noRequests": "لا توجد طلبات",
+  "hospital": "مستشفى",
+  "caseDetails": "تفاصيل الحالة",
+  "caseDetailsFor": "تفاصيل الحالة لـ {name}",
+  "@caseDetailsFor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "close": "إغلاق",
+  "togetherSaveLives": "معاً نُنقذ الأرواح",
+  "welcomeBack": "مرحباً بك",
+  "loginToContinue": "سجل الدخول للمتابعة",
+  "email": "البريد الإلكتروني",
+  "enterEmail": "أدخل بريدك الإلكتروني",
+  "emailRequired": "الرجاء إدخال البريد الإلكتروني",
+  "invalidEmail": "الرجاء إدخال بريد إلكتروني صحيح",
+  "password": "كلمة المرور",
+  "enterPassword": "أدخل كلمة المرور",
+  "passwordRequired": "الرجاء إدخال كلمة المرور",
+  "passwordTooShort": "كلمة المرور يجب أن تكون {min} أحرف على الأقل",
+  "@passwordTooShort": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "forgotPassword": "نسيت كلمة المرور؟",
+  "login": "تسجيل الدخول",
+  "or": "أو",
+  "loginWithGoogle": "تسجيل الدخول بواسطة Google",
+  "dontHaveAccount": "ليس لديك حساب؟ ",
+  "registerNow": "سجل الآن",
+  "errorOccurred": "حدث خطأ: {error}",
+  "@errorOccurred": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewAccount": "إنشاء حساب جديد",
+  "joinUsSaveLives": "انضم إلينا وساهم في إنقاذ الأرواح",
+  "enterFullName": "أدخل اسمك الكامل",
+  "nameRequired": "الرجاء إدخال الاسم",
+  "nameTooShort": "الاسم يجب أن يكون {min} أحرف على الأقل",
+  "@nameTooShort": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "phoneNumber": "رقم الهاتف",
+  "enterPhoneNumber": "أدخل رقم هاتفك",
+  "phoneRequired": "الرجاء إدخال رقم الهاتف",
+  "invalidPhone": "رقم الهاتف غير صحيح",
+  "address": "العنوان",
+  "addressRequired": "الرجاء إدخال العنوان",
+  "enterAddress": "أدخل عنوانك",
+  "addressTooShort": "العنوان يجب أن يكون {min} أحرف على الأقل",
+  "@addressTooShort": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "birthDate": "تاريخ الميلاد",
+  "pickBirthDate": "اختر تاريخ ميلادك",
+  "birthDateRequired": "الرجاء اختيار تاريخ الميلاد",
+  "tooYoung": "يجب أن يكون عمرك {age} عاماً على الأقل",
+  "@tooYoung": {
+    "placeholders": {
+      "age": {
+        "type": "int"
+      }
+    }
+  },
+  "gender": "الجنس",
+  "selectGender": "اختر الجنس",
+  "male": "ذكر",
+  "female": "أنثى",
+  "genderOther": "آخر",
+  "bloodGroup": "فصيلة الدم",
+  "selectBloodGroup": "اختر فصيلة دمك",
+  "bloodGroupRequired": "الرجاء اختيار فصيلة الدم",
+  "confirmPassword": "تأكيد كلمة المرور",
+  "reEnterPassword": "أعد إدخال كلمة المرور",
+  "confirmPasswordRequired": "الرجاء تأكيد كلمة المرور",
+  "passwordsDoNotMatch": "كلمة المرور غير متطابقة",
+  "agreeToTerms": "أوافق على ",
+  "termsAndConditions": "الشروط والأحكام",
+  "privacyPolicy": "سياسة الخصوصية",
+  "mustAgreeTerms": "يجب الموافقة على الشروط والأحكام",
+  "and": " و",
+  "notAvailable": "غير متوفر",
+  "bloodUnitsNeeded": "وحدات الدم المطلوبة",
+  "getDirections": "احصل على الاتجاهات",
+  "openingMapFor": "فتح الخريطة لـ {name}",
+  "@openingMapFor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "bookAppointment": "حجز موعد للتبرع",
+  "selectDateAndTime": "الرجاء اختيار التاريخ والوقت",
+  "pleaseLoginFirst": "الرجاء تسجيل الدخول أولاً",
+  "appointmentBooked": "تم حجز الموعد بنجاح!",
+  "unitsRequired": "{quantity} وحدات مطلوبة",
+  "@unitsRequired": {
+    "placeholders": {
+      "quantity": {
+        "type": "int"
+      }
+    }
+  },
+  "selectDate": "اختر التاريخ",
+  "selectTime": "اختر الوقت",
+  "notesOptional": "ملاحظات (اختياري)",
+  "addNotesHint": "أضف أي ملاحظات إضافية...",
+  "confirmAppointment": "تأكيد الموعد",
+  "done": "تم",
+  "willBeAbleToDonate": "ستتمكن من التبرع",
+  "inDays": "خلال {days} أيام",
+  "@inDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "donatedOn": "تم التبرع في",
+  "dataUpdatedSuccessfully": "تم تحديث البيانات بنجاح",
+  "updateError": "حدث خطأ أثناء التحديث",
+  "editProfile": "تعديل الملف الشخصي",
+  "saveChanges": "حفظ التغييرات",
+  "share": "مشاركة",
+  "donateNow": "تبرع الآن",
+  "urgent": "عاجل",
+  "medium": "متوسط",
+  "low": "منخفض",
+  "urgentCase": "حالة مستعجلة",
+  "shareMessage": "تبرع بالدم للحالة: {hospital}\nفصيلة الدم: {bloodType}\nالمستشفى: {hospital}\nرابط الحالة: blooddonation://request?id={id}",
+  "minutesAgo": "منذ {count} دقيقة",
+  "hoursAgo": "منذ {count} ساعة",
+  "yesterday": "أمس",
+  "daysAgo": "منذ {count} أيام",
+  "register": "إنشاء حساب",
+  "alreadyHaveAccount": "لديك حساب بالفعل؟ ",
+  "resetPassword": "إعادة تعيين كلمة المرور",
+  "forgotPasswordTitle": "هل نسيت كلمة المرور؟",
+  "forgotPasswordDesc": "أدخل بريدك الإلكتروني وسنرسل لك رابطاً لإعادة تعيين كلمة المرور الخاصة بك.",
+  "sendLink": "إرسال الرابط",
+  "resetInstructionsSent": "تم إرسال تعليمات إعادة تعيين كلمة المرور إلى بريدك الإلكتروني",
+  "checkYourEmail": "تحقق من بريدك الإلكتروني",
+  "verificationEmailSent": "لقد أرسلنا رابط التحقق إلى {email}. يرجى النقر على الرابط لتأكيد حسابك.",
+  "@verificationEmailSent": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "verifyBeforeLogin": "يجب عليك تأكيد بريدك الإلكتروني قبل تسجيل الدخول.",
+  "goToLogin": "الذهاب لتسجيل الدخول",
+  "checkSpamFolder": "إذا لم تجد الرسالة، تحقق من مجلد البريد العشوائي.",
+  "emailNotVerified": "يرجى تأكيد بريدك الإلكتروني قبل تسجيل الدخول. تحقق من صندوق الوارد.",
+  "notifications": "الإشعارات",
+  "noNotifications": "لا توجد إشعارات",
+  "markAsRead": "وضع كمقروء",
+  "deleteNotification": "حذف"
+}
